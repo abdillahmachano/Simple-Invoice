@@ -19,9 +19,9 @@ $pdf->MultiCell(70, 6, 'BRITTA INTERNATIONAL APARTMENTS
 Sea View
 Dar es Salaam, Dar es Salaam
 Tanzania
-ass@dsd.com', 0, 'L');
+abc@efg.com', 0, 'L');
 
-$pdf->SetLineWidth(0.7);
+$pdf->SetLineWidth(0.5);
 $pdf->SetDrawColor(208, 208, 208);
 $pdf->Line(10, 75, 200, 75);
 
@@ -52,7 +52,31 @@ $pdf->MultiCell(40, 6, '# 0001
 $pdf->SetY(95);
 $pdf->SetX(-70);
 $pdf->SetFillColor(208, 208, 208);
-$pdf->Cell(30, 8, 'AMOUNT DUE:', 0, 0, 'L', $fill = true);
-$pdf->Cell(30, 8, '$452,000.00', 0, 0, 'R', $fill = true);
+$pdf->Cell(30, 8, 'AMOUNT DUE:', 1, 0, 'L', $fill = true);
+$pdf->Cell(30, 8, '2,400,000.00', 1, 0, 'R', $fill = true);
+
+$pdf->SetY(125);
+$pdf->SetX(10);
+$pdf->SetFillColor(208, 208, 208);
+$pdf->Cell(38, 8, 'Item', 1, 0, 'L', true);
+$pdf->Cell(38, 8, 'Description', 1, 0, 'L', true);
+$pdf->Cell(38, 8, 'Quantity', 1, 0, 'R', true);
+$pdf->Cell(38, 8, 'Unit Cost', 1, 0, 'C', true);
+$pdf->Cell(38, 8, 'Line Total', 1, 0, 'C', true);
+
+$pdf->SetY(133);
+$pdf->SetX(10);
+$pdf->SetFont('Arial', '', 10);
+$pdf->Cell(38, 8, '101 Studio', 0, 0, 'L');
+$pdf->Cell(38, 8, '12 Months Rent for Studio Apartment', 0, 0, 'L');
+$pdf->Cell(38, 8, '12', 0, 0, 'R');
+$pdf->Cell(38, 8, '200,000.00', 0, 0, 'C');
+$pdf->Cell(38, 8, '2,400,000.00', 0, 0, 'C');
+$pdf->SetLineWidth(0.4);
+$pdf->SetDrawColor(208, 208, 208);
+$pdf->Line(10, 140, 200, 140);
+
+$pdf->Output();
+
 
 $pdf->Output();
